@@ -1,221 +1,129 @@
-![SaySo Banner](assets/brand/banner-hero.png)
+<p align="center">
+  <img src="Assets/Brand/banner-hero.png" alt="SaySo" width="720">
+</p>
 
-# SaySo
+<p align="center">
+  <b>Speak into any text field.</b><br>
+  Free, unlimited, open source speech-to-text that runs entirely on your machine.
+</p>
 
-**SaySo — a free, unlimited, open source speech-to-text app that works completely offline.**
+<p align="center">
+  <img alt="Platform" src="https://img.shields.io/badge/macOS-Apple%20Silicon-ffe000?style=flat-square&labelColor=111">
+  <img alt="Windows" src="https://img.shields.io/badge/Windows-coming%20soon-777?style=flat-square&labelColor=111">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-ffe000?style=flat-square&labelColor=111">
+  <img alt="Offline" src="https://img.shields.io/badge/cloud-never-ffe000?style=flat-square&labelColor=111">
+</p>
 
-SaySo is a cross-platform desktop application that provides simple, privacy-focused speech transcription. Press a shortcut, speak, and have your words appear in any text field. This happens on your own computer without sending any information to the cloud.
+<p align="center">
+  <a href="https://github.com/AaryanRaj007/sayso-website/raw/main/public/SaySo_0.9.4_aarch64.dmg"><b>Download for macOS</b></a>
+  ·
+  <a href="#install">Install</a>
+  ·
+  <a href="#build-from-source">Build</a>
+</p>
 
-## Why SaySo?
+---
 
-- **Free**: Accessibility tooling belongs in everyone's hands, not behind a paywall
-- **Open Source**: Together we can build further. Extend SaySo for yourself and contribute to something bigger
-- **Private**: Your voice stays on your computer. Get transcriptions without sending audio to the cloud
-- **Simple**: One tool, one job. Transcribe what you say and put it into a text box
+Press <kbd>Option</kbd> + <kbd>Space</kbd>, talk, let go. Your words land wherever
+the cursor was. No account, no subscription, no audio leaving your computer.
 
-## How It Works
+<p align="center">
+  <img src="Assets/Screenshots/general.png" alt="SaySo settings" width="49%">
+  <img src="Assets/Screenshots/models.png" alt="Transcription models" width="49%">
+</p>
+<p align="center">
+  <img src="Assets/Screenshots/history.png" alt="Transcription history" width="49%">
+  <img src="Assets/Screenshots/advanced.png" alt="Advanced settings" width="49%">
+</p>
 
-1. **Press** a configurable keyboard shortcut to start/stop recording (or use push-to-talk mode)
-2. **Speak** your words while the shortcut is active
-3. **Release** and SaySo processes your speech using local Whisper / ONNX models
-4. **Get** your transcribed text pasted directly into whatever app you're using
+## Why
 
-The process is entirely local:
+|  |  |
+| :-- | :-- |
+| **Offline** | Transcription runs locally. Your voice never touches a server. |
+| **Free** | No subscription, no usage caps, no account. |
+| **Fast** | GPU accelerated. Short clips transcribe faster than real time. |
+| **67 models** | Whisper, Parakeet, Canary, Moonshine, and more. Pick per machine. |
+| **Yours** | MIT licensed. Fork it, break it, make it what you need. |
 
-- Silence is filtered using VAD (Voice Activity Detection) with Silero VAD v4
-- Transcription uses your choice of local models:
-  - **Whisper models** (Small/Medium/Turbo/Large) with GPU acceleration when available
-  - **Parakeet models** - CPU-optimized models with high performance and automatic language detection
-- Works on Windows, macOS, and Linux
+## Install
 
-## Quick Start
-
-### Installation (macOS)
-
-<!-- Replace `your-github-username` throughout once the repo and tap are published. -->
-
-#### Option 1 — Homebrew (recommended)
-
-**Step 1 — Install Homebrew (skip if you already have it).** Check with
-`brew --version`; if that prints a version, jump to step 2. Otherwise:
+**Homebrew** — no security warning:
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install --cask --no-quarantine AaryanRaj007/sayso/sayso
 ```
 
-This asks for your Mac password and takes a few minutes. When it finishes it may
-print two `export PATH` lines — run those, or just close and reopen Terminal, so
-the `brew` command is found.
+**Or download the `.dmg`** and drag SaySo to Applications. macOS will say it
+can't verify the app, because it isn't notarized by Apple. Open
+**System Settings → Privacy & Security**, scroll down, click **Open Anyway**.
 
-**Step 2 — Install SaySo.**
+> Install to `/Applications`. Running SaySo from the mounted disk image means
+> macOS can never remember its Accessibility permission.
+
+On first launch, grant **Microphone** (to hear you) and **Accessibility** (to
+type for you). Then hit <kbd>Option</kbd> + <kbd>Space</kbd>.
+
+## Build from source
+
+Needs [Rust](https://rustup.rs) and [Bun](https://bun.sh).
 
 ```bash
-brew install --cask --no-quarantine your-github-username/sayso/sayso
+git clone https://github.com/AaryanRaj007/SaySo.git
+cd SaySo
+bun install
+bun run tauri build
 ```
 
-The `--no-quarantine` flag is what matters: it stops macOS from tagging the app as
-downloaded from the internet, so you get a clean install with no security warning.
-Without it you'll see the same prompt as the direct download below.
-
-#### Option 2 — Direct download
-
-1. Download `SaySo_<version>_aarch64.dmg` from
-   [Releases](https://github.com/your-github-username/SaySo/releases).
-2. Open the `.dmg` and drag **SaySo** into your **Applications** folder.
-3. macOS will say *"Apple could not verify SaySo is free of malware."* This is
-   expected — SaySo is not notarized by Apple (that requires a $99/year Apple
-   Developer account). To get past it, once:
-   - Open **System Settings → Privacy & Security**
-   - Scroll to the bottom — SaySo will be listed as blocked
-   - Click **Open Anyway**, then launch SaySo again
-
-   Right-click → Open no longer works on recent macOS versions, so use the steps
-   above.
-
-> **Always install to `/Applications`.** Running SaySo directly from the mounted
-> `.dmg` means macOS can never keep its Accessibility permission — the disk image
-> gets a new, temporary path every time it is mounted.
-
-#### After installing
-
-Launch SaySo and grant the two macOS permissions it asks for:
-
-- **Microphone** — so it can hear you. Audio never leaves your machine.
-- **Accessibility** — so it can type the transcription into whatever app you're in.
-
-Then press **Option + Space**, speak, and release. Shortcuts are configurable in
-Settings.
-
-#### Building and installing locally
-
-If you build SaySo yourself, use the helper script — it installs to `/Applications`
-and signs with a stable certificate so your Accessibility grant survives rebuilds:
+Installing your own build:
 
 ```bash
 ./scripts/create-signing-identity.sh   # once per machine
-npm run tauri build && ./scripts/install-macos.sh
+./scripts/install-macos.sh             # installs to /Applications, signs, launches
 ```
 
-### Development Setup
+The signing identity matters. Ad-hoc signing changes the app's hash on every
+build, which silently invalidates the Accessibility permission and leaves the
+System Settings toggle switched on while the app sees it as off. Signing with a
+stable certificate keeps the grant across rebuilds.
 
-For detailed build instructions including platform-specific requirements, see [BUILD.md](BUILD.md).
+## How it works
 
-## Architecture
-
-SaySo is built as a Tauri 2.x application combining:
-
-- **Frontend**: React 18 + TypeScript with Tailwind CSS for the workspace UI
-- **Backend**: Rust for system integration, audio processing, and ML inference
-- **Core Libraries**:
-  - `transcribe-cpp`: Local speech recognition with Whisper-family models (GGML/GGUF)
-  - `transcribe-rs`: Local speech recognition with ONNX models
-  - `cpal`: Cross-platform audio I/O
-  - `vad-rs`: Voice Activity Detection
-  - `rdev`: Global keyboard shortcuts and system events
-  - `rubato`: Audio resampling
-
-### Debug Mode
-
-SaySo includes a debug mode for development and troubleshooting. Access it by pressing:
-
-- **macOS**: `Cmd+Shift+D`
-- **Windows/Linux**: `Ctrl+Shift+D`
-
-### CLI Parameters
-
-SaySo supports command-line flags for controlling a running instance and customizing startup behavior. These work on all platforms (macOS, Windows, Linux).
-
-**Remote control flags** (sent to an already-running instance via the single-instance plugin):
-
-```bash
-sayso --toggle-transcription    # Toggle recording on/off
-sayso --toggle-post-process     # Toggle recording with post-processing on/off
-sayso --cancel                  # Cancel the current operation
+```
+shortcut → record → VAD trims silence → local model → paste at cursor
 ```
 
-**Startup flags:**
+Tauri 2 (Rust) with a React + TypeScript frontend. Whisper-family models run
+through `transcribe-cpp` (GGML/GGUF, Metal accelerated); Parakeet, Moonshine and
+friends run through ONNX.
 
-```bash
-sayso --start-hidden            # Start without showing the main window
-sayso --no-tray                 # Start without the system tray icon
-sayso --debug                   # Enable debug mode with verbose logging
-sayso --help                    # Show all available flags
-```
+Full docs: **[the SaySo site](https://github.com/AaryanRaj007/sayso-website)** ·
+Architecture notes: [AGENTS.md](AGENTS.md) · Build details: [BUILD.md](BUILD.md)
 
-Flags can be combined for autostart scenarios:
+## Brand
 
-```bash
-sayso --start-hidden --no-tray
-```
+<p align="center">
+  <img src="Assets/Brand/icon.png" alt="App icon" width="110">
+  &nbsp;&nbsp;
+  <img src="Assets/Brand/mark-glow.png" alt="Mark" width="140">
+  &nbsp;&nbsp;
+  <img src="Assets/Brand/mark-mono.png" alt="Monochrome mark" width="140">
+</p>
+<p align="center">
+  <img src="Assets/Brand/wordmark-outline.png" alt="SaySo wordmark" width="420">
+</p>
 
-> **macOS tip:** When SaySo is installed as an app bundle, invoke the binary directly:
->
-> ```bash
-> /Applications/SaySo.app/Contents/MacOS/SaySo --toggle-transcription
-> ```
+Yellow `#ffe000` on black. Bagel Fat One for the wordmark, Fredoka for
+everything else. Yellow is a fill colour, never text on a light background.
 
-### Linux Notes
+## Credits
 
-**Text Input Tools:**
+Based on [Handy](https://github.com/cjpais/Handy) by CJ Pais, MIT licensed.
+SaySo is a rebranded fork; the Handy name and brand are not used here.
 
-For reliable text input on Linux, install the appropriate tool for your display server:
-
-| Display Server | Recommended Tool | Install Command |
-| -------------- | ---------------- | -------------------------------------------------- |
-| X11 | `xdotool` | `sudo apt install xdotool` |
-| Wayland | `wtype` | `sudo apt install wtype` |
-| Both | `dotool` | `sudo apt install dotool` (requires `input` group) |
-
-### System Requirements/Recommendations
-
-**For Whisper Models:**
-
-- **macOS**: M series Mac, Intel Mac
-- **Windows**: Intel, AMD, or NVIDIA GPU
-- **Linux**: Intel, AMD, or NVIDIA GPU
-
-**For Parakeet Models:**
-
-- **CPU-only operation** - runs on a wide variety of hardware
-- **Minimum**: Intel Skylake (6th gen) or equivalent AMD processors
-- **Automatic language detection** - no manual language selection required
-
-## Troubleshooting
-
-### Manual Model Installation (For Proxy Users or Network Restrictions)
-
-If you're behind a proxy or restricted network environment where SaySo cannot download models automatically, you can manually download and install them.
-
-#### Step 1: Find Your App Data Directory
-
-The default application data directory paths are:
-
-- **macOS**: `~/Library/Application Support/com.altn.sayso/`
-- **Windows**: `C:\Users\{username}\AppData\Roaming\com.altn.sayso\`
-- **Linux**: `~/.config/com.altn.sayso/`
-
-#### Step 2: Create Models Directory
-
-Inside your app data directory, create a `models` folder if it doesn't already exist:
-
-```bash
-# macOS/Linux
-mkdir -p ~/.config/com.altn.sayso/models
-```
-
-#### Step 3: Install Models
-
-Place `.bin` or `.gguf` model files directly inside the `models/` directory, then restart SaySo to detect the models.
+The SaySo name, logo and wordmark belong to altn and are not covered by the
+MIT licence.
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file for details.
-
-Based on SaySo by cjpais, MIT licensed.
-
-## Acknowledgments
-
-- **Whisper** by OpenAI for the speech recognition model
-- **ggml and transcribe.cpp** for cross-platform speech-to-text inference/acceleration
-- **Silero** for lightweight VAD
-- **Tauri** team for the Rust-based app framework
+[MIT](LICENSE)
