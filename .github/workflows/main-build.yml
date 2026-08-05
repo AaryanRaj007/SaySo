@@ -1,0 +1,41 @@
+name: "Main Branch Build"
+
+# Runs the full cross-platform build on every push to main so breakage is
+# caught before a manual release is triggered. Artifacts are kept for 30 days
+# so any commit on main has a downloadable, testable build.
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Matches the release matrix: SaySo ships macOS on Apple Silicon and
+          # Windows x64 only. This workflow runs on every push, so the removed
+          # Intel/Linux/Windows-ARM runners were pure cost.
+          - platform: "macos-26"
+            args: "--target aarch64-apple-darwin"
+            target: "aarch64-apple-darwin"
+          - platform: "windows-latest"
+            args: ""
+            target: "x86_64-pc-windows-msvc"
+
+    uses: ./.github/workflows/build.yml
+    with:
+      platform: ${{ matrix.platform }}
+      target: ${{ matrix.target }}
+      build-args: ${{ matrix.args }}
+      upload-artifacts: true
+      # No Apple/Azure signing secrets in this repo; leaving this on fails the job.
+      sign-binaries: false
+    secrets: inherit

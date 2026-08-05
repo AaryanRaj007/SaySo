@@ -1,0 +1,77 @@
+name: "Release"
+
+on: workflow_dispatch
+
+jobs:
+  create-release:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    outputs:
+      release-id: ${{ steps.create-release.outputs.result }}
+      version: ${{ steps.get-version.outputs.version }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Get version from tauri.conf.json
+        id: get-version
+        shell: bash
+        run: |
+          VERSION=$(grep -o '"version": "[^"]*"' src-tauri/tauri.conf.json | cut -d'"' -f4)
+          echo "Application version from tauri.conf.json: $VERSION"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Create Draft Release
+        id: create-release
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const { data } = await github.rest.repos.createRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag_name: `v${{ steps.get-version.outputs.version }}`,
+              name: `v${{ steps.get-version.outputs.version }}`,
+              draft: true,
+              prerelease: false,
+              generate_release_notes: true
+            })
+            return data.id
+
+  publish-tauri:
+    permissions:
+      contents: write
+    needs: create-release
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # SaySo ships two targets only: macOS on Apple Silicon and Windows
+          # x64. Intel Mac, Windows ARM and Linux runners were removed so the
+          # release never publishes artifacts the website doesn't link to.
+          - platform: "macos-26" # Arm based macs (M1 and above). macOS 26 for the Apple Intelligence SDK.
+            args: "--target aarch64-apple-darwin"
+            target: "aarch64-apple-darwin"
+          - platform: "windows-latest"
+            args: ""
+            target: "x86_64-pc-windows-msvc"
+
+    uses: ./.github/workflows/build.yml
+    with:
+      platform: ${{ matrix.platform }}
+      target: ${{ matrix.target }}
+      build-args: ${{ matrix.args }}
+      # Signing is off: it needs Apple Developer certs (APPLE_CERTIFICATE,
+      # APPLE_ID) and Azure Trusted Signing creds (AZURE_CLIENT_ID/SECRET) as
+      # repo secrets, none of which this project has. With it on, the release
+      # job fails outright. Unsigned means macOS shows the Gatekeeper prompt and
+      # Windows shows SmartScreen, both of which the download page explains.
+      # Set back to true once the certificates and secrets exist.
+      sign-binaries: false
+      asset-prefix: "sayso"
+      upload-artifacts: false
+      release-id: ${{ needs.create-release.outputs.release-id }}
+      # Releases always build from scratch — never restore the Rust cache, so a
+      # stale cached native lib can never be linked into a shipped artifact.
+      no-cache: true
+    secrets: inherit
