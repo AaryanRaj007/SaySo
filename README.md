@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Assets/Brand/banner-hero.png" alt="SaySo" width="720">
+  <img src="Assets/Brand/wordmark-outline.png" alt="SaySo" width="720">
 </p>
 
 <p align="center">
@@ -110,7 +110,7 @@ Architecture notes: [AGENTS.md](AGENTS.md) · Build details: [BUILD.md](BUILD.md
   <img src="Assets/Brand/mark-mono.png" alt="Monochrome mark" width="140">
 </p>
 <p align="center">
-  <img src="Assets/Brand/wordmark-outline.png" alt="SaySo wordmark" width="420">
+  <img src="Assets/Brand/banner-hero.png" alt="SaySo wordmark" width="420">
 </p>
 
 Yellow `#ffe000` on black. Bagel Fat One for the wordmark, Fredoka for
