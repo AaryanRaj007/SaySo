@@ -15,20 +15,11 @@ export const ShowOverlay: React.FC<ShowOverlayProps> = React.memo(
     const { t } = useTranslation();
     const { getSetting, updateSetting, isUpdating } = useSettings();
 
-    const styleOptions = [
-      {
-        value: "none",
-        label: t("settings.advanced.overlay.style.options.none"),
-      },
-      {
-        value: "minimal",
-        label: t("settings.advanced.overlay.style.options.minimal"),
-      },
-      {
-        value: "live",
-        label: t("settings.advanced.overlay.style.options.live"),
-      },
-    ];
+    const styleOptions = (["none", "minimal", "live"] as const).map((v) => ({
+      value: v,
+      label: t(`settings.advanced.overlay.style.options.${v}`),
+      description: t(`settings.advanced.overlay.style.optionDescriptions.${v}`),
+    }));
 
     const positionOptions = [
       {

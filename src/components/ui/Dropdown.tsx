@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Tooltip } from "./Tooltip";
 
 export interface DropdownOption {
   value: string;
   label: string;
   disabled?: boolean;
+  /** Shown as a hover tooltip on the option row. */
+  description?: string;
 }
 
 interface DropdownProps {
@@ -29,6 +32,11 @@ export const Dropdown: React.FC<DropdownProps> = ({
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  // Element of the option currently hovered, so its description can be
+  // tooltipped. Held as state (not a ref) because the tooltip must re-render
+  // when the hovered row changes.
+  const [hoveredEl, setHoveredEl] = useState<HTMLElement | null>(null);
+  const hoveredOption = options.find((o) => o.value === hoveredEl?.dataset.value);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -96,12 +104,15 @@ export const Dropdown: React.FC<DropdownProps> = ({
               <button
                 key={option.value}
                 type="button"
+                data-value={option.value}
                 className={`w-full px-2 py-1 text-sm text-start hover:bg-logo-primary/10 transition-colors duration-150 ${
                   selectedValue === option.value
                     ? "bg-logo-primary/20 font-semibold"
                     : ""
                 } ${option.disabled ? "opacity-50 cursor-not-allowed" : ""}`}
                 onClick={() => handleSelect(option.value)}
+                onMouseEnter={(e) => setHoveredEl(e.currentTarget)}
+                onMouseLeave={() => setHoveredEl(null)}
                 disabled={option.disabled}
               >
                 <span className="whitespace-normal break-words">
@@ -111,6 +122,11 @@ export const Dropdown: React.FC<DropdownProps> = ({
             ))
           )}
         </div>
+      )}
+      {isOpen && hoveredEl && hoveredOption?.description && (
+        <Tooltip targetRef={{ current: hoveredEl }} position="bottom">
+          <p className="text-xs text-center">{hoveredOption.description}</p>
+        </Tooltip>
       )}
     </div>
   );

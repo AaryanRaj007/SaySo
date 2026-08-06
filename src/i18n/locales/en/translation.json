@@ -289,6 +289,11 @@
             "none": "None",
             "minimal": "Minimal",
             "live": "Live"
+          },
+          "optionDescriptions": {
+            "none": "No overlay. Nothing appears while recording.",
+            "minimal": "A compact pill that reacts to your voice. No text.",
+            "live": "The pill grows into a panel showing your words as you speak. Streaming models only."
           }
         },
         "position": {
