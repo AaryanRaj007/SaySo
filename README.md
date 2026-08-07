@@ -1,7 +1,6 @@
 <p align="center">
   <img src="Assets/Brand/wordmark-outline.png" alt="SaySo" width="720">
 </p>
-
 <p align="center">
   <b>Speak into any text field.</b><br>
   Free, unlimited, open source speech-to-text that runs entirely on your machine.
