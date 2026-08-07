@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Assets/Brand/wordmark-outline.png" alt="SaySo" width="720">
+  <img src="Assets/Brand/wordmark-outline.png" alt="SaySo" width="500">
 </p>
 <p align="center">
   <b>Speak into any text field.</b><br>
