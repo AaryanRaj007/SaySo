@@ -18,8 +18,8 @@
     "format:backend": "cd src-tauri && cargo fmt",
     "test:playwright": "playwright test",
     "test:playwright:ui": "playwright test --ui",
-    "check:translations": "node scripts/check-translations.js || true",
-    "postinstall": "node scripts/check-nix-deps.js || true"
+    "check:translations": "bun scripts/check-translations.ts || true",
+    "postinstall": "bun scripts/check-nix-deps.ts || true"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.16",
