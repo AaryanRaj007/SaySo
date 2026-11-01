@@ -108,7 +108,10 @@
       },
       "accessibility": {
         "title": "Accessibility Access",
-        "description": "Required to type transcribed text into your applications."
+        "description": "Required to type transcribed text into your applications.",
+        "checkAgain": "Check Again",
+        "openSystemSettings": "Open System Settings",
+        "applicationsFolderHint": "💡 SaySo must be in your Applications folder for macOS to remember this permission. Running it from the disk image will not work."
       },
       "grant": "Grant Permission",
       "granted": "Granted",

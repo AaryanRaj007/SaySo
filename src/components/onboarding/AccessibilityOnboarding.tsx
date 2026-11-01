@@ -417,7 +417,7 @@ const AccessibilityOnboarding: React.FC<AccessibilityOnboardingProps> = ({
                         className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-text text-xs font-medium transition-colors flex items-center gap-1.5"
                       >
                         <RefreshCw className="w-3 h-3" />
-                        Check Again
+                        {t("onboarding.permissions.accessibility.checkAgain")}
                       </button>
                       <button
                         onClick={() => {
@@ -426,13 +426,11 @@ const AccessibilityOnboarding: React.FC<AccessibilityOnboardingProps> = ({
                         className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-text text-xs font-medium transition-colors flex items-center gap-1.5"
                       >
                         <ExternalLink className="w-3 h-3" />
-                        Open System Settings
+                        {t("onboarding.permissions.accessibility.openSystemSettings")}
                       </button>
                     </div>
                     <p className="text-xs text-text/40">
-                      💡 SaySo must be in your Applications folder for macOS to
-                      remember this permission. Running it from the disk image
-                      will not work.
+                      {t("onboarding.permissions.accessibility.applicationsFolderHint")}
                     </p>
                   </div>
                 ) : (
