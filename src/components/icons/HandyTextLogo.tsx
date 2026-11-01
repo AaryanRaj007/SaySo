@@ -1,5 +1,8 @@
 import React from "react";
 
+// Brand name, never translated.
+const BRAND_NAME = "SaySo";
+
 const HandyTextLogo = ({
   width,
   height,
@@ -39,7 +42,7 @@ const HandyTextLogo = ({
           letterSpacing: `${-1 * scale}px`,
         }}
       >
-        SaySo
+        {BRAND_NAME}
       </span>
     </div>
   );
