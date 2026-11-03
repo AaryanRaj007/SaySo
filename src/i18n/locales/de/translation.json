@@ -292,6 +292,11 @@
             "none": "Keine",
             "minimal": "Minimal",
             "live": "Live"
+          },
+          "optionDescriptions": {
+            "none": "Kein Overlay. Während der Aufnahme wird nichts angezeigt.",
+            "minimal": "Ein kompaktes Element, das auf deine Stimme reagiert. Kein Text.",
+            "live": "Das Element wächst zu einem Panel, das deine Worte beim Sprechen zeigt. Nur Streaming-Modelle."
           }
         },
         "position": {

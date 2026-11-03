@@ -292,6 +292,11 @@
             "none": "Yok",
             "minimal": "Sade",
             "live": "Canlı"
+          },
+          "optionDescriptions": {
+            "none": "Kaplama yok. Kayıt sırasında hiçbir şey görünmez.",
+            "minimal": "Sesinize tepki veren küçük bir hap. Metin yok.",
+            "live": "Hap, konuşurken sözcüklerinizi gösteren bir panele dönüşür. Yalnızca akış destekli modeller."
           }
         },
         "position": {

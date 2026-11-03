@@ -292,6 +292,11 @@
             "none": "Ingen",
             "minimal": "Minimal",
             "live": "Live"
+          },
+          "optionDescriptions": {
+            "none": "Inget överlägg. Ingenting visas under inspelning.",
+            "minimal": "En kompakt pill som reagerar på din röst. Ingen text.",
+            "live": "Pillen växer till en panel som visar dina ord medan du pratar. Endast strömmande modeller."
           }
         },
         "position": {

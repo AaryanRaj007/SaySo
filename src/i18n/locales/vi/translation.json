@@ -292,6 +292,11 @@
             "none": "Không có",
             "minimal": "Tối giản",
             "live": "Trực tiếp"
+          },
+          "optionDescriptions": {
+            "none": "Không có lớp phủ. Không hiển thị gì khi ghi âm.",
+            "minimal": "Một viên nhỏ gọn phản hồi theo giọng nói của bạn. Không có chữ.",
+            "live": "Viên mở rộng thành bảng hiển thị lời bạn nói theo thời gian thực. Chỉ dành cho mô hình streaming."
           }
         },
         "position": {

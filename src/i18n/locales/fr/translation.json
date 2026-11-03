@@ -292,6 +292,11 @@
             "none": "Aucune",
             "minimal": "Minimal",
             "live": "Live"
+          },
+          "optionDescriptions": {
+            "none": "Aucune superposition. Rien ne s'affiche pendant l'enregistrement.",
+            "minimal": "Une pastille compacte qui réagit à votre voix. Sans texte.",
+            "live": "La pastille s'agrandit en un panneau qui affiche vos mots pendant que vous parlez. Modèles en streaming uniquement."
           }
         },
         "position": {

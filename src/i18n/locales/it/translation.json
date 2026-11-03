@@ -292,6 +292,11 @@
             "none": "Nessuno",
             "minimal": "Minimo",
             "live": "In tempo reale"
+          },
+          "optionDescriptions": {
+            "none": "Nessuna sovrapposizione. Durante la registrazione non appare nulla.",
+            "minimal": "Una pillola compatta che reagisce alla tua voce. Nessun testo.",
+            "live": "La pillola si espande in un pannello che mostra le tue parole mentre parli. Solo modelli in streaming."
           }
         },
         "position": {

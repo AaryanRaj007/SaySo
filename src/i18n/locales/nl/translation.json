@@ -292,6 +292,11 @@
             "none": "Geen",
             "minimal": "Minimaal",
             "live": "Live"
+          },
+          "optionDescriptions": {
+            "none": "Geen overlay. Tijdens het opnemen verschijnt er niets.",
+            "minimal": "Een compacte pil die op je stem reageert. Geen tekst.",
+            "live": "De pil groeit uit tot een paneel dat je woorden toont terwijl je spreekt. Alleen streamingmodellen."
           }
         },
         "position": {

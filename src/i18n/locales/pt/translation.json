@@ -292,6 +292,11 @@
             "none": "Nenhum",
             "minimal": "Minimalista",
             "live": "Ao vivo"
+          },
+          "optionDescriptions": {
+            "none": "Sem sobreposição. Nada aparece durante a gravação.",
+            "minimal": "Uma pílula compacta que reage à sua voz. Sem texto.",
+            "live": "A pílula se expande em um painel que mostra suas palavras enquanto você fala. Apenas modelos com streaming."
           }
         },
         "position": {

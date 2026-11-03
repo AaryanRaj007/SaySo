@@ -292,6 +292,11 @@
             "none": "Ingen",
             "minimal": "Minimal",
             "live": "Live"
+          },
+          "optionDescriptions": {
+            "none": "Intet overlay. Intet vises under optagelse.",
+            "minimal": "En kompakt pille, der reagerer på din stemme. Ingen tekst.",
+            "live": "Pillen vokser til et panel, der viser dine ord, mens du taler. Kun streamingmodeller."
           }
         },
         "position": {

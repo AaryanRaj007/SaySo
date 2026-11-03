@@ -292,6 +292,11 @@
             "none": "Brak",
             "minimal": "Minimalna",
             "live": "Na żywo"
+          },
+          "optionDescriptions": {
+            "none": "Brak nakładki. Podczas nagrywania nic się nie pojawia.",
+            "minimal": "Kompaktowa pigułka reagująca na Twój głos. Bez tekstu.",
+            "live": "Pigułka rozwija się w panel pokazujący Twoje słowa podczas mówienia. Tylko modele strumieniowe."
           }
         },
         "position": {

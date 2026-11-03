@@ -292,6 +292,11 @@
             "none": "Žádné",
             "minimal": "Minimální",
             "live": "Živě"
+          },
+          "optionDescriptions": {
+            "none": "Bez překrytí. Během nahrávání se nic nezobrazí.",
+            "minimal": "Kompaktní prvek, který reaguje na váš hlas. Bez textu.",
+            "live": "Prvek se rozšíří na panel, který zobrazuje vaše slova, zatímco mluvíte. Pouze pro streamovací modely."
           }
         },
         "position": {

@@ -292,6 +292,11 @@
             "none": "Ninguna",
             "minimal": "Minimalista",
             "live": "En vivo"
+          },
+          "optionDescriptions": {
+            "none": "Sin superposición. No aparece nada mientras grabas.",
+            "minimal": "Una píldora compacta que reacciona a tu voz. Sin texto.",
+            "live": "La píldora se convierte en un panel que muestra tus palabras mientras hablas. Solo modelos de streaming."
           }
         },
         "position": {
