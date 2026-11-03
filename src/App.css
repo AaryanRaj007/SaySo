@@ -72,7 +72,11 @@
   text-align: center;
 }
 
-h1, h2, h3, .font-heading, .brand-logo {
+h1,
+h2,
+h3,
+.font-heading,
+.brand-logo {
   font-family: "Bagel Fat One", cursive, sans-serif;
 }
 
