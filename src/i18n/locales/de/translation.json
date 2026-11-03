@@ -108,7 +108,10 @@
       },
       "accessibility": {
         "title": "Bedienungshilfen-Zugriff",
-        "description": "Erforderlich, um transkribierten Text in deine Anwendungen einzugeben."
+        "description": "Erforderlich, um transkribierten Text in deine Anwendungen einzugeben.",
+        "checkAgain": "Erneut prüfen",
+        "openSystemSettings": "Systemeinstellungen öffnen",
+        "applicationsFolderHint": "💡 SaySo muss im Ordner „Programme“ liegen, damit macOS diese Berechtigung behält. Aus dem Disk-Image gestartet funktioniert es nicht."
       },
       "grant": "Berechtigung erteilen",
       "granted": "Erteilt",

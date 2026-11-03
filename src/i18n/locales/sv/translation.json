@@ -108,7 +108,10 @@
       },
       "accessibility": {
         "title": "Hjälpmedelsåtkomst",
-        "description": "Krävs för att skriva transkriberad text i dina program."
+        "description": "Krävs för att skriva transkriberad text i dina program.",
+        "checkAgain": "Kontrollera igen",
+        "openSystemSettings": "Öppna Systeminställningar",
+        "applicationsFolderHint": "💡 SaySo måste ligga i mappen Program för att macOS ska komma ihåg den här behörigheten. Det fungerar inte att köra den från skivavbilden."
       },
       "grant": "Bevilja behörighet",
       "granted": "Beviljad",

@@ -108,7 +108,10 @@
       },
       "accessibility": {
         "title": "Acceso de accesibilidad",
-        "description": "Necesario para escribir el texto transcrito en tus aplicaciones."
+        "description": "Necesario para escribir el texto transcrito en tus aplicaciones.",
+        "checkAgain": "Comprobar de nuevo",
+        "openSystemSettings": "Abrir Ajustes del Sistema",
+        "applicationsFolderHint": "💡 SaySo debe estar en la carpeta Aplicaciones para que macOS recuerde este permiso. Ejecutarlo desde la imagen de disco no funcionará."
       },
       "grant": "Conceder permiso",
       "granted": "Concedido",

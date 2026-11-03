@@ -108,7 +108,10 @@
       },
       "accessibility": {
         "title": "Přístup k usnadnění",
-        "description": "Potřebný pro psaní přepsaného textu do vašich aplikací."
+        "description": "Potřebný pro psaní přepsaného textu do vašich aplikací.",
+        "checkAgain": "Zkontrolovat znovu",
+        "openSystemSettings": "Otevřít Nastavení systému",
+        "applicationsFolderHint": "💡 SaySo musí být ve složce Aplikace, aby si macOS toto oprávnění zapamatoval. Spuštění z obrazu disku nebude fungovat."
       },
       "grant": "Udělit oprávnění",
       "granted": "Uděleno",

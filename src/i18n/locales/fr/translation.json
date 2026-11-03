@@ -108,7 +108,10 @@
       },
       "accessibility": {
         "title": "Accès à l'accessibilité",
-        "description": "Nécessaire pour taper le texte transcrit dans vos applications."
+        "description": "Nécessaire pour taper le texte transcrit dans vos applications.",
+        "checkAgain": "Vérifier à nouveau",
+        "openSystemSettings": "Ouvrir Réglages Système",
+        "applicationsFolderHint": "💡 SaySo doit se trouver dans le dossier Applications pour que macOS mémorise cette autorisation. Le lancer depuis l'image disque ne fonctionnera pas."
       },
       "grant": "Accorder l'autorisation",
       "granted": "Accordé",

@@ -108,7 +108,10 @@
       },
       "accessibility": {
         "title": "Quyền truy cập Trợ năng",
-        "description": "Cần thiết để nhập văn bản đã chuyển đổi vào các ứng dụng của bạn."
+        "description": "Cần thiết để nhập văn bản đã chuyển đổi vào các ứng dụng của bạn.",
+        "checkAgain": "Kiểm tra lại",
+        "openSystemSettings": "Mở Cài đặt hệ thống",
+        "applicationsFolderHint": "💡 SaySo phải nằm trong thư mục Ứng dụng để macOS ghi nhớ quyền này. Chạy từ ảnh đĩa sẽ không hoạt động."
       },
       "grant": "Cấp quyền",
       "granted": "Đã cấp",

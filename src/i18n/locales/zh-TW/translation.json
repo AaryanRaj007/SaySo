@@ -108,7 +108,10 @@
       },
       "accessibility": {
         "title": "輔助使用存取",
-        "description": "需要將轉錄文字輸入到您的應用程式中"
+        "description": "需要將轉錄文字輸入到您的應用程式中",
+        "checkAgain": "重新檢查",
+        "openSystemSettings": "打開系統設定",
+        "applicationsFolderHint": "💡 SaySo 必須位於「應用程式」資料夾中，macOS 才會記住此權限。從磁碟映像檔執行將無法生效。"
       },
       "grant": "授予權限",
       "granted": "已授予",

@@ -108,7 +108,10 @@
       },
       "accessibility": {
         "title": "Dostęp do dostępności",
-        "description": "Wymagany do wpisywania transkrybowanego tekstu w Twoich aplikacjach."
+        "description": "Wymagany do wpisywania transkrybowanego tekstu w Twoich aplikacjach.",
+        "checkAgain": "Sprawdź ponownie",
+        "openSystemSettings": "Otwórz Ustawienia systemowe",
+        "applicationsFolderHint": "💡 SaySo musi znajdować się w folderze Aplikacje, aby macOS zapamiętał to uprawnienie. Uruchomienie z obrazu dysku nie zadziała."
       },
       "grant": "Przyznaj uprawnienie",
       "granted": "Przyznano",

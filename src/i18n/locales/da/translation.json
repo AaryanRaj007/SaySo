@@ -108,7 +108,10 @@
       },
       "accessibility": {
         "title": "Tilgængelighedsadgang",
-        "description": "Påkrævet for at skrive den transskriberede tekst ind i dine programmer."
+        "description": "Påkrævet for at skrive den transskriberede tekst ind i dine programmer.",
+        "checkAgain": "Tjek igen",
+        "openSystemSettings": "Åbn Systemindstillinger",
+        "applicationsFolderHint": "💡 SaySo skal ligge i mappen Programmer, for at macOS kan huske denne tilladelse. Det virker ikke at køre den fra diskbilledet."
       },
       "grant": "Giv tilladelse",
       "granted": "Givet",

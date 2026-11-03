@@ -108,7 +108,10 @@
       },
       "accessibility": {
         "title": "Erişilebilirlik Erişimi",
-        "description": "Transkribe edilen metni uygulamalarınıza yazabilmek için gereklidir."
+        "description": "Transkribe edilen metni uygulamalarınıza yazabilmek için gereklidir.",
+        "checkAgain": "Tekrar kontrol et",
+        "openSystemSettings": "Sistem Ayarları'nı aç",
+        "applicationsFolderHint": "💡 macOS'un bu izni hatırlaması için SaySo'nun Uygulamalar klasöründe olması gerekir. Disk görüntüsünden çalıştırmak işe yaramaz."
       },
       "grant": "İzin Ver",
       "granted": "Verildi",
