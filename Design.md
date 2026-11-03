@@ -5,6 +5,7 @@
 This document defines a reusable, local-first, low-latency desktop application architecture and design system specification. It provides a blueprint for building high-performance cross-platform software featuring typed IPC communication, local hardware-accelerated processing, zero-friction background operations, and a premium visual user interface.
 
 ### Key Architectural & Design Pillars
+
 - **Local-First & Privacy by Design**: Core workloads execute on-device without external cloud dependencies, ensuring user data privacy, low latency, and offline resilience.
 - **Sub-Second Performance Pipeline**: Optimized stream processing using native system APIs, hardware GPU acceleration, and direct system integration.
 - **Zero-Friction User Experience**: Silent background operation with non-intrusive floating overlays, global hotkey hooks (push-to-talk and toggle modes), and system tray integration.
@@ -105,15 +106,15 @@ native-core/
 
 #### Native Core Domain Responsibilities
 
-| Subsystem / Manager | Core Responsibilities | Architectural Goals |
-| :--- | :--- | :--- |
-| **Stream Manager** | Enumerates hardware devices, manages active stream lifetimes, handles hot-swapping and device fallbacks. | Zero sample loss, low latency, automatic audio/device recovery. |
-| **Activity Detector** | Evaluates real-time sample buffers against activity thresholds to strip silence and noise. | Minimizes CPU/GPU compute overhead by pruning non-actionable input. |
-| **Model / Execution Manager**| Handles asset downloads, integrity verification, memory allocation, and hardware acceleration dispatch. | Safe memory allocation, automatic GPU fallback, zero runtime panics. |
-| **Workflow Coordinator** | Orchestrates end-to-end data flow: Input capture → Noise filtering → Processing → Post-processing → Output. | Sequential stream safety, asynchronous non-blocking execution. |
-| **Output Injector** | Injects processed results into active focus targets via simulated keypresses or system clipboard. | Universal application compatibility, clipboard restoration. |
-| **History Storage** | Maintains transactional history logs, retention policies, and search indices via an embedded database. | Fast indexing, automatic retention purging, zero data corruption. |
-| **Shortcut Listener** | Listens for global OS keystrokes asynchronously (Push-to-Talk and Toggle modes). | Low key-latency, hotkey conflict prevention, global OS access. |
+| Subsystem / Manager           | Core Responsibilities                                                                                       | Architectural Goals                                                  |
+| :---------------------------- | :---------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------- |
+| **Stream Manager**            | Enumerates hardware devices, manages active stream lifetimes, handles hot-swapping and device fallbacks.    | Zero sample loss, low latency, automatic audio/device recovery.      |
+| **Activity Detector**         | Evaluates real-time sample buffers against activity thresholds to strip silence and noise.                  | Minimizes CPU/GPU compute overhead by pruning non-actionable input.  |
+| **Model / Execution Manager** | Handles asset downloads, integrity verification, memory allocation, and hardware acceleration dispatch.     | Safe memory allocation, automatic GPU fallback, zero runtime panics. |
+| **Workflow Coordinator**      | Orchestrates end-to-end data flow: Input capture → Noise filtering → Processing → Post-processing → Output. | Sequential stream safety, asynchronous non-blocking execution.       |
+| **Output Injector**           | Injects processed results into active focus targets via simulated keypresses or system clipboard.           | Universal application compatibility, clipboard restoration.          |
+| **History Storage**           | Maintains transactional history logs, retention policies, and search indices via an embedded database.      | Fast indexing, automatic retention purging, zero data corruption.    |
+| **Shortcut Listener**         | Listens for global OS keystrokes asynchronously (Push-to-Talk and Toggle modes).                            | Low key-latency, hotkey conflict prevention, global OS access.       |
 
 ---
 
@@ -147,6 +148,7 @@ frontend/
 ## 4. Design System & Visual Aesthetics
 
 ### 4.1 Aesthetic Principles
+
 - **Modern Dark & Light Themes**: Carefully selected HSL color tokens for high contrast, legibility, and reduced eye strain.
 - **Glassmorphism & Depth**: Subtle backdrop blurs, soft border highlights, and layered elevations to distinguish control panels from content.
 - **Micro-Animations**: Smooth visual feedback on button interactions, toggles, state transitions, and live activity visualizers.
@@ -249,11 +251,13 @@ flowchart LR
 ## 6. Security, Privacy & System Integration Controls
 
 ### 6.1 Privacy & Data Isolation Standards
+
 1. **100% On-Device Processing**: All sensitive inputs remain strictly inside volatile local memory or encrypted local storage. Zero network telemetry or data sampling without explicit user opt-in.
 2. **Secure Input Field Masking**: The core monitors system window focus states. If a focused field is identified as a secure password input, result auto-injection is suppressed to prevent credential leaks.
 3. **Configurable Data Retention**: Embedded database implements automated retention filters allowing users to specify history retention windows (e.g., 24 hours, 7 days, 30 days, or volatile memory-only mode).
 
 ### 6.2 Single-Instance Architecture & CLI Controls
+
 - Enforces single-instance binary execution.
 - Launching subsequent process instances passes command flags (e.g., `--toggle-execution`, `--cancel`, `--start-hidden`) over local IPC sockets to the primary instance, then immediately terminates.
 - Prevents resource contention over hardware devices and system hooks.
@@ -271,11 +275,13 @@ flowchart LR
 ## 8. Testing & Quality Assurance Plan
 
 ### 8.1 Automated Testing Strategy
+
 - **End-to-End UI Testing**: Automated integration suites for user flows, onboarding, and settings panels.
 - **Translation Validation**: Automated scripts verifying key coverage across all target locales against the primary source catalog.
 - **Static Analysis & Formatting**: Enforced linting and code formatting checks across frontend and native codebases prior to deployment.
 
 ### 8.2 System Verification Checklist
+
 - **Hardware Device Fallbacks**: Validate audio/input stream continuity when switching hardware devices or disconnecting default peripherals.
 - **Low-Latency Benchmark**: Ensure end-to-end processing latency remains under defined targets across target hardware tiers.
 - **Platform Parity**: Verify global shortcut listeners, system tray controls, and overlay floating windows on macOS, Windows, and Linux.

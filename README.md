@@ -37,13 +37,13 @@ the cursor was. No account, no subscription, no audio leaving your computer.
 
 ## Why
 
-|  |  |
-| :-- | :-- |
-| **Offline** | Transcription runs locally. Your voice never touches a server. |
-| **Free** | No subscription, no usage caps, no account. |
-| **Fast** | GPU accelerated. Short clips transcribe faster than real time. |
+|               |                                                                   |
+| :------------ | :---------------------------------------------------------------- |
+| **Offline**   | Transcription runs locally. Your voice never touches a server.    |
+| **Free**      | No subscription, no usage caps, no account.                       |
+| **Fast**      | GPU accelerated. Short clips transcribe faster than real time.    |
 | **67 models** | Whisper, Parakeet, Canary, Moonshine, and more. Pick per machine. |
-| **Yours** | MIT licensed. Fork it, break it, make it what you need. |
+| **Yours**     | MIT licensed. Fork it, break it, make it what you need.           |
 
 ## Install
 
