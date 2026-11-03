@@ -11,6 +11,8 @@
   <img alt="Windows" src="https://img.shields.io/badge/Windows-coming%20soon-777?style=flat-square&labelColor=111">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-ffe000?style=flat-square&labelColor=111">
   <img alt="Offline" src="https://img.shields.io/badge/cloud-never-ffe000?style=flat-square&labelColor=111">
+  <a href="https://github.com/AaryanRaj007/SaySo/actions/workflows/test.yml"><img alt="Tests" src="https://img.shields.io/github/actions/workflow/status/AaryanRaj007/SaySo/test.yml?branch=main&label=tests&style=flat-square&labelColor=111"></a>
+  <a href="https://github.com/AaryanRaj007/SaySo/actions/workflows/code-quality.yml"><img alt="Code quality" src="https://img.shields.io/github/actions/workflow/status/AaryanRaj007/SaySo/code-quality.yml?branch=main&label=code%20quality&style=flat-square&labelColor=111"></a>
 </p>
 
 <p align="center">
