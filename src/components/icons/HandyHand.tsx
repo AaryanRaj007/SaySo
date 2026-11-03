@@ -6,7 +6,8 @@ const HandyHand = ({
   height?: number | string;
 }) => {
   // Scale font size proportionally
-  const numWidth = typeof width === "string" ? parseInt(width, 10) : width || 24;
+  const numWidth =
+    typeof width === "string" ? parseInt(width, 10) : width || 24;
   const fontSize = numWidth * 0.85;
 
   return (

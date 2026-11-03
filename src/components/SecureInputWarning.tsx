@@ -6,8 +6,7 @@ import { ExternalLink, TriangleAlert, X } from "lucide-react";
 import { commands, type SecureInputStatus } from "@/bindings";
 
 // Detailed remediation steps live in the docs rather than in the banner
-export const SECURE_INPUT_HELP_URL =
-  "";
+export const SECURE_INPUT_HELP_URL = "";
 
 /**
  * Compact warning banner shown while macOS Secure Input is stuck on.

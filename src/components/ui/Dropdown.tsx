@@ -36,7 +36,9 @@ export const Dropdown: React.FC<DropdownProps> = ({
   // tooltipped. Held as state (not a ref) because the tooltip must re-render
   // when the hovered row changes.
   const [hoveredEl, setHoveredEl] = useState<HTMLElement | null>(null);
-  const hoveredOption = options.find((o) => o.value === hoveredEl?.dataset.value);
+  const hoveredOption = options.find(
+    (o) => o.value === hoveredEl?.dataset.value,
+  );
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

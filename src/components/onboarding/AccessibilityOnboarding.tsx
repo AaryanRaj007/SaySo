@@ -12,7 +12,14 @@ import { toast } from "sonner";
 import { commands } from "@/bindings";
 import { useSettingsStore } from "@/stores/settingsStore";
 import HandyTextLogo from "../icons/HandyTextLogo";
-import { Keyboard, Mic, Check, Loader2, RefreshCw, ExternalLink } from "lucide-react";
+import {
+  Keyboard,
+  Mic,
+  Check,
+  Loader2,
+  RefreshCw,
+  ExternalLink,
+} from "lucide-react";
 
 interface AccessibilityOnboardingProps {
   onComplete: () => void;
@@ -390,9 +397,13 @@ const AccessibilityOnboarding: React.FC<AccessibilityOnboardingProps> = ({
                       <button
                         onClick={async () => {
                           try {
-                            const granted = await checkAccessibilityPermission();
+                            const granted =
+                              await checkAccessibilityPermission();
                             if (granted) {
-                              setPermissions((prev) => ({ ...prev, accessibility: "granted" }));
+                              setPermissions((prev) => ({
+                                ...prev,
+                                accessibility: "granted",
+                              }));
                               try {
                                 await Promise.all([
                                   commands.initializeEnigo(),
@@ -401,14 +412,20 @@ const AccessibilityOnboarding: React.FC<AccessibilityOnboardingProps> = ({
                               } catch (e) {
                                 console.warn("Init after grant:", e);
                               }
-                              const micGranted = await checkMicrophonePermission();
+                              const micGranted =
+                                await checkMicrophonePermission();
                               if (micGranted) {
-                                setPermissions((prev) => ({ ...prev, microphone: "granted" }));
+                                setPermissions((prev) => ({
+                                  ...prev,
+                                  microphone: "granted",
+                                }));
                                 await completeOnboarding();
                               }
                               toast.success("Accessibility granted!");
                             } else {
-                              toast.info("Not detected yet. Make sure SaySo is in your Applications folder, then toggle the switch off and on in System Settings.");
+                              toast.info(
+                                "Not detected yet. Make sure SaySo is in your Applications folder, then toggle the switch off and on in System Settings.",
+                              );
                             }
                           } catch (e) {
                             console.error("Manual recheck failed:", e);
@@ -421,16 +438,22 @@ const AccessibilityOnboarding: React.FC<AccessibilityOnboardingProps> = ({
                       </button>
                       <button
                         onClick={() => {
-                          openUrl("x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility");
+                          openUrl(
+                            "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility",
+                          );
                         }}
                         className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-text text-xs font-medium transition-colors flex items-center gap-1.5"
                       >
                         <ExternalLink className="w-3 h-3" />
-                        {t("onboarding.permissions.accessibility.openSystemSettings")}
+                        {t(
+                          "onboarding.permissions.accessibility.openSystemSettings",
+                        )}
                       </button>
                     </div>
                     <p className="text-xs text-text/40">
-                      {t("onboarding.permissions.accessibility.applicationsFolderHint")}
+                      {t(
+                        "onboarding.permissions.accessibility.applicationsFolderHint",
+                      )}
                     </p>
                   </div>
                 ) : (
@@ -445,7 +468,6 @@ const AccessibilityOnboarding: React.FC<AccessibilityOnboardingProps> = ({
             </div>
           </div>
         )}
-
       </div>
     </div>
   );
